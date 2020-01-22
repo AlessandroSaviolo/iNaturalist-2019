@@ -62,3 +62,4 @@ You can change the experimental setting by simply modifying the parameter in the
 
 ## 5. Credits
 
+The [Megvii-Nanjing GitHub Repository](https://github.com/Megvii-Nanjing/BBNb) has deeply helped the development of this project.
