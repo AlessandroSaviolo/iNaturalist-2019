@@ -42,11 +42,11 @@ You can use the following code to convert from the original format of iNaturalis
 python tools/convert_from_iNat.py --file train2019.json --root iNat19/images --sp jsons
 ```
 
-## 3. Pretrain Model
+## 4. Pretrain Model
 
 - [BBN pretrain model for iNaturalist 2018](https://drive.google.com/open?id=18aT-eIpmxQMP9PrNOB1Q5Vjmzr7tvEdb)
 
-## 4. Usage
+## 5. Usage
 
 To train long-tailed iNaturalist2019 with imbalanced ratio of 50:
 ```
@@ -60,6 +60,6 @@ python main/valid.py  --cfg configs/iNaturalist2019.yaml
 
 You can change the experimental setting by simply modifying the parameter in the yaml file.
 
-## 5. Credits
+## 6. Credits
 
 The [Megvii-Nanjing GitHub Repository](https://github.com/Megvii-Nanjing/BBNb) has deeply helped the development of this project.
