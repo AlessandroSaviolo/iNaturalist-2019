@@ -1,38 +1,24 @@
 # iNaturalist 2019
 
-Final project "iNaturalist 2019 at FGVC6 Fine-grained classification spanning a thousand species"
-https://www.kaggle.com/c/inaturalist-2019-fgvc6
+This project is part of a series of projects for the course _Selected Topics in Visual Recognition using Deep Learning_ that I attended during my exchange program at National Chiao Tung University (Taiwan). See `task.pdf` for the details of the assignment. See `report.pdf` for the report containing the representation and the analysis of the produced results.
 
-## BBN: Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition with Shift-Invariant Convolutional Neural Network
-This repository is based on the official PyTorch implementation of paper [BBN: Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition](https://arxiv.org/abs/1912.02413).
+The purpose of this project is to implement a classifier for the [iNaturalist 2019 Challenge](https://www.kaggle.com/c/inaturalist-2019-fgvc6). The implementation is based on the official PyTorch implementation of the paper "[BBN: Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition](https://arxiv.org/abs/1912.02413)". 
 
-## Main requirements
+## 1. Requirements
 
-  * **PyTorch ≥1.0**
-  * **torchvision ≥0.2.2_post3**
-  * **TensorboardX**
-  * **Python 3**
+- PyTorch ≥ 1.0
+- torchvision ≥ 0.2.2_post3
+- TensorboardX
+- Python 3.x
 
-## Pretrain models for iNaturalist
+## 2. Dataset
 
-We provide the BBN pretrain models for iNaturalist 2018: [Google Drive](https://drive.google.com/open?id=18aT-eIpmxQMP9PrNOB1Q5Vjmzr7tvEdb)
+The images and annotations can be downloaded at [iNaturalist 2019](https://www.kaggle.com/c/inaturalist-2019-fgvc6/data).
 
-  ## Usage
-```bash
-# To train long-tailed iNaturalist2019 with imbalanced ratio of 50:
-python main/train.py  --cfg configs/iNaturalist2019.yaml     
+## 3. Data format
 
-# To validate with the best model:
-python main/valid.py  --cfg configs/iNaturalist2019.yaml
-```
-
-You can change the experimental setting by simply modifying the parameter in the yaml file.
-
-## Data format
-
-The annotation of a dataset is a dict consisting of two field: `annotations` and `num_classes`.
-The field `annotations` is a list of dict with
-`image_id`, `fpath`, `im_height`, `im_width` and `category_id`.
+The annotation of a dataset is a dictionary consisting of two fields: `annotations` and `num_classes`.
+The field `annotations` is a list of dict with `image_id`, `fpath`, `im_height`, `im_width` and `category_id`.
 
 Here is an example.
 ```
@@ -52,9 +38,27 @@ Here is an example.
 ```
 
 You can use the following code to convert from the original format of iNaturalist. 
-The images and annotations can be downloaded at [iNaturalist 2019](https://www.kaggle.com/c/inaturalist-2019-fgvc6/data)
-
-```bash
-# Convert from the original format of iNaturalist
+```
 python tools/convert_from_iNat.py --file train2019.json --root iNat19/images --sp jsons
 ```
+
+## 3. Pretrain Model
+
+- [BBN pretrain model for iNaturalist 2018](https://drive.google.com/open?id=18aT-eIpmxQMP9PrNOB1Q5Vjmzr7tvEdb)
+
+## 4. Usage
+
+To train long-tailed iNaturalist2019 with imbalanced ratio of 50:
+```
+python main/train.py  --cfg configs/iNaturalist2019.yaml     
+```
+
+To validate with the best model:
+```
+python main/valid.py  --cfg configs/iNaturalist2019.yaml
+```
+
+You can change the experimental setting by simply modifying the parameter in the yaml file.
+
+## 5. Credits
+
