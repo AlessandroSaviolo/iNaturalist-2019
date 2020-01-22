@@ -13,7 +13,7 @@ The purpose of this project is to implement a classifier for the [iNaturalist 20
 
 ## 2. Dataset
 
-The images and annotations can be downloaded at [iNaturalist 2019](https://www.kaggle.com/c/inaturalist-2019-fgvc6/data).
+The images and annotations can be downloaded from [iNaturalist 2019](https://www.kaggle.com/c/inaturalist-2019-fgvc6/data).
 
 ## 3. Data format
 
